@@ -10,17 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create: (_)=> CountProvider(),child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: HomeScreen()
-    ),);
+     return ChangeNotifierProvider(create: (_)=> CountProvider(),child: MaterialApp(home: HomeScreen()));
+    // return MultiProvider(providers: [
+    //   ChangeNotifierProvider(create: (_) => CountProvider()),
+    //   ChangeNotifierProvider(create: (_) => CountProvider(),)
+    // ],child: MaterialApp(home: HomeScreen()));
   }
 }
+
 
 
